@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>circles</title>
+	<style type="text/css">
+
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		html, body{
+			width: 100%;
+			height: 100%;
+
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		body{
+			min-height: 100%;
+
+			position: relative;
+
+			background-image: url(sky.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		div.bg {
+			position: absolute;
+
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		div.animated-bg {
+			overflow: hidden;
+		}
+
+		div.static-bg {
+			top: 38%;
+
+			overflow: hidden;
+
+			-webkit-filter: brightness(42%);
+			filter: brightness(42%);
+		}
+
+		div.static-bg img {
+			object-fit: cover;
+			object-position: top;
+
+			display: block;
+			
+			width: 100%;
+			height: 100%;
+		}
+
+		div.circle {
+			background-image: url(circles.png);
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+
+			transform: translate(-50%, -50%);
+		}
+
+		div.circle-1 {
+			background-position: 0 0;
+
+			width: 600px;
+			height: 600px;
+			
+			animation: turn-clockwise infinite 30s linear;
+
+			z-index: 1;
+		}
+
+		div.circle-2 {
+			background-position: 400px 0;
+
+			width: 400px;
+			height: 400px;
+
+			animation: turn-clockwise infinite 50s linear;
+		}
+
+		div.circle-3 {
+			background-position: 400px 200px;
+
+			width: 200px;
+			height: 200px;
+
+			animation: turn-clockwise infinite 100s linear;
+		}
+		
+		main {
+			height: 100%;
+
+			position: relative;
+		}
+
+		h1.text {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			font-size: 1.3rem;
+			color: #d4d4d4;
+		}
+
+		@keyframes turn-clockwise {
+			0% {transform: rotate(0deg);}
+			100% {transform: rotate(360deg);}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="bg animated-bg">
+		<div class="circle circle-1"></div>
+		<div class="circle circle-2"></div>
+		<div class="circle circle-3"></div>
+	</div>
+	<div class="bg static-bg">
+		<img src="bg.png" alt="bg">
+	</div>
+	<main>
+		<h1 class="text">
+			HELLO THERE!
+		</h1>
+	</main>
+</body>
+</html>
